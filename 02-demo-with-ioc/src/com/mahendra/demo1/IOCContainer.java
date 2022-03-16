@@ -1,5 +1,10 @@
 package com.mahendra.demo1;
 
+
+//Responsible for
+// 1. Ordered Creation of all components
+// 2. Dependency Injection
+
 public class IOCContainer {
 	private ProductAFactory factoryA = null;
 	private ProductBFactory factoryB = null;
