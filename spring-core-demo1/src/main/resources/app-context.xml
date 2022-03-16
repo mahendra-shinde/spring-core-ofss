@@ -10,13 +10,14 @@
   <bean id="manufacturing" class="com.mahendra.demo1.Manufacturing" />
   <bean id="packaging" class="com.mahendra.demo1.Packaging" />
   
-  <bean id="productAFactory" class="com.mahendra.demo1.ProductAFactory">
-  <!-- Constructor Injection (DI) -->
-  	<constructor-arg ref="manufacturing"/>
-  	<constructor-arg ref="packaging"/>
+  <bean id="productAFactory" class="com.mahendra.demo1.ProductAFactory" lazy-init="true">
+  <!--  Setter Injection -->
+  	<property name="manufacture" ref="manufacturing"/>
+  	<property name="packaging" ref="packaging"/>
   </bean>
   
-  <bean id="productBFactory" class="com.mahendra.demo1.ProductBFactory">
+  <bean id="productBFactory" class="com.mahendra.demo1.ProductBFactory" lazy-init="true">
+  <!-- Constructor Injection (DI) -->
   	<constructor-arg ref="manufacturing"/>
   	<constructor-arg ref="packaging"/>
   </bean>
